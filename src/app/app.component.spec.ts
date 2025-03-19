@@ -1,29 +1,40 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClientTesting } from '@angular/common/http/testing';
 
 describe('AppComponent', () => {
+
+  // Before each test, configure the testing module and compile the component
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [        
+        provideHttpClient(),    // Provide the HttpClient for making HTTP requests
+        provideHttpClientTesting(),   // Provide the HttpClientTesting module to mock HTTP requests in tests
+      ]
     }).compileComponents();
   });
 
+  // Test to check if the component is created successfully
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'hacker-news-v3' title`, () => {
+  // Test to verify if the component's title is set to 'Top Hacker New Stories'
+  it(`should have the 'Top Hacker New Stories' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('hacker-news-v3');
+    expect(app.title).toEqual('Top Hacker New Stories');
   });
 
+  // Test to check if the component renders the correct title
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, hacker-news-v3');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Top Hacker New Stories');
   });
 });

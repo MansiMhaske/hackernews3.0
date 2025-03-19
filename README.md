@@ -1,6 +1,14 @@
 # HackerNewsV3
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.3.
+This project is a design of the Hacker News front page using Angular version 19.2.3. It fetches the latest top stories from the Hacker News API and displays them in a clean, accessible UI. 
+
+## Setup Instructions
+
+Clone this repository:
+   ```bash
+   git clone https://github.com/MansiMhaske/hackernews3.0
+   cd hacker-news-v3
+   ```
 
 ## Development server
 

@@ -1,0 +1,43 @@
+/* Header styling */
+.header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling for the stories container*/
+.stories-container {
+    margin: 20px;
+}
+
+/* Styling for each story card */
+.story-card {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Styling for story titles */
+.story-title {
+    font-size: 1.2em;
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Styling for story titles on Hover effect */
+.story-title:hover {
+    text-decoration: underline;
+}
+
+/* styling for class for screen reader-only elements */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+}

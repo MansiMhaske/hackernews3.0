@@ -1,0 +1,21 @@
+<main role="main">
+    <header class="header">
+      <h1>{{ title }}</h1>
+    </header>
+  
+    <section class="stories-container" aria-labelledby="top-stories">
+        <h2 id="top-stories" class="sr-only">Top Stories</h2> <!-- Hidden heading for screen readers -->
+      
+        <!-- Loop through the stories and display each one-->
+        <article *ngFor="let story of topStories" class="story-card" tabindex="0">
+            <a [href]="story.url" 
+            target="_blank" 
+            class="story-title" 
+            [attr.aria-label]="'Read ' + story.title + ' on Hacker News'" 
+            rel="noopener noreferrer">
+            {{ story.title }}
+            </a>
+            <p>By: <span>{{ story.by }}</span> | {{ story.score }} points</p>
+        </article>
+    </section>
+</main>
