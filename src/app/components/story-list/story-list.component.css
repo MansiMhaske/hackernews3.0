@@ -1,32 +1,60 @@
+/* Apply a light background color for the entire page */
+body {
+    background-color: #f4f4f9;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333333;
+}
+
 /* Header styling */
 .header {
+    background-color: #50a8e2;
+    padding: 20px;
     text-align: center;
-    margin-top: 20px;
+    color: #ffffff;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.5rem;
 }
 
 /* Styling for the stories container*/
 .stories-container {
-    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    padding: 20px;
+    background-color: #ffffff;
 }
 
 /* Styling for each story card */
 .story-card {
-    background-color: #f9f9f9;
-    padding: 10px;
+    border: 1px solid #dddddd;
+    padding: 15px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
 }
 
 /* Styling for story titles */
 .story-title {
     font-size: 1.2em;
-    color: #007bff;
+    color: #007acc;
+    font-weight: bold;
+    line-height: 1.4;
     text-decoration: none;
 }
 
+p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
 /* Styling for story titles on Hover effect */
-.story-title:hover {
+.story-title:hover, .story-title:focus {
+    color: #0030f2;
     text-decoration: underline;
 }
 

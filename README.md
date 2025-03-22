@@ -1,6 +1,20 @@
-# HackerNewsV3
+## HackerNewsV3
 
 This project is a design of the Hacker News front page using Angular version 19.2.3. It fetches the latest top stories from the Hacker News API and displays them in a clean, accessible UI. 
+
+## Features  
+
+- Fetch and display top stories from Hacker News
+- Responsive and intuitive UI
+- Fast performance with efficient API handling
+- Dynamic content updates and clean design
+
+## Prerequisites
+
+- **Frontend:** Angular CLI (Version 19),
+                Node.js( Version 16 and above),
+                npm (Node Package Manager)
+- **API:** Hacker News API
 
 ## Setup Instructions
 
