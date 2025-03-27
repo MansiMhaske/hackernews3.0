@@ -1,23 +1,27 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HackerNewsService {
+  private baseUrl: string = 'https://hacker-news.firebaseio.com/v0';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
-  private apiUrl = 'https://hacker-news.firebaseio.com/v0/';
-
-  //Fetches the list of top Stories
-  getTopStories(): Observable<any> {
-    return this.httpClient.get<any[]>(`${this.apiUrl}topstories.json?print=pretty`);
+  // Get top stories
+  getTopStories(): Observable<number[]> {
+    return this.http.get<number[]>(`${this.baseUrl}/topstories.json?print=pretty`);
   }
 
-  //Fetched the details of the Stiry by Id
+  // Get new stories
+  getNewStories(): Observable<number[]> {
+    return this.http.get<number[]>(`${this.baseUrl}/newstories.json?print=pretty`);
+  }
+
+  // Get story details by ID
   getStoryDetailsById(id: number): Observable<any> {
-    return this.httpClient.get<any>(`${this.apiUrl}item/${id}.json?print=pretty`);
+    return this.http.get<any>(`${this.baseUrl}/item/${id}.json?print=pretty`);
   }
 }

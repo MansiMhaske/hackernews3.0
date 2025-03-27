@@ -1,21 +1,28 @@
 <main role="main">
     <header class="header">
-      <h1>{{ title }}</h1>
+        <h1>{{ title }}</h1>
     </header>
-  
-    <section class="stories-container" aria-labelledby="top-stories">
-        <h2 id="top-stories" class="sr-only">Top Stories</h2> <!-- Hidden heading for screen readers -->
-      
-        <!-- Loop through the stories and display each one-->
-        <article *ngFor="let story of topStories" class="story-card" tabindex="0">
-            <a [href]="story.url" 
-            target="_blank" 
-            class="story-title" 
-            [attr.aria-label]="'Read ' + story.title + ' on Hacker News'" 
-            rel="noopener noreferrer">
-            {{ story.title }}
+
+    <!-- Tabs for selecting between Top Stories and New Stories -->
+    <div class="tabs">
+        <button (click)="selectTab('top')" [class.active]="currentTab === 'top'">Top Stories</button>
+        <button (click)="selectTab('new')" [class.active]="currentTab === 'new'">New Stories</button>
+    </div>
+
+    <section class="stories-container">
+        <!-- Loop through selected stories and display each one -->
+        <article *ngFor="let story of selectedStories" class="story-card">
+            <a [href]="story.url" target="_blank" class="story-title">
+                {{ story.title }}
             </a>
             <p>By: <span>{{ story.by }}</span> | {{ story.score }} points</p>
         </article>
     </section>
+
+    <!-- Load More Button -->
+    <button *ngIf="(currentTab === 'top' ? topStoriesIndex : newStoriesIndex) < (currentTab === 'top' ? allTopStoriesIds.length : allNewStoriesIds.length)"
+            (click)="loadMore()" class="load-more" [disabled]="loading">
+        <span *ngIf="!loading">Load More</span>             <!-- Shows 'Load More' if not loading -->
+        <div *ngIf="loading" class="button-loader"></div>   <!-- Shows loader while loading more stories -->
+    </button>
 </main>

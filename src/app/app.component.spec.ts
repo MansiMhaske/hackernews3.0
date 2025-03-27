@@ -23,11 +23,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // Test to verify if the component's title is set to 'Top Hacker New Stories'
-  it(`should have the 'Top Hacker New Stories' title`, () => {
+  // Test to verify if the component's title is set to 'Hacker News Stories'
+  it(`should have the 'Hacker News Stories' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('Top Hacker New Stories');
+    expect(app.title).toEqual('Hacker News Stories');
   });
 
   // Test to check if the component renders the correct title
@@ -35,6 +35,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Top Hacker New Stories');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hacker News Stories');
   });
 });

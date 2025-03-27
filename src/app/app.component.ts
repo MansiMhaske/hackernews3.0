@@ -8,5 +8,5 @@ import { StoryListComponent } from "./components/story-list/story-list.component
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Top Hacker New Stories';
+  title = 'Hacker News Stories';
 }
